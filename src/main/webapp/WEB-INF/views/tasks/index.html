@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+  <head>
+    <meta charset="UTF-8">
+    <title>All tasks</title>
+    <link rel="stylesheet" th:href="@{/css/index.css}"/>
+  </head>
+  <body>
+
+  <div class="todo-header">
+    <h1>ToDo List</h1>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card card-white">
+          <div class="card-body">
+            <div class="todo-list" th:each="task : ${tasks}">
+              <div class="todo-item">
+                <a th:href="@{/tasks/{id}(id=${task.getId()})}" th:text="${task.getName()}">user</a>
+              </div>
+            </div>
+            <a href="/tasks/new">
+              <button class="button-15" role="button">Create new task</button>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  </body>
+</html>
