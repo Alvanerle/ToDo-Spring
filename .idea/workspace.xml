@@ -10,13 +10,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="89deda74-356c-4b4c-9d3b-1d138d876812" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/973d0930-63d2-404f-82f3-2c50c0a330be.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/973d0930-63d2-404f-82f3-2c50c0a330be.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/973d0930-63d2-404f-82f3-2c50c0a330be/storage_v2/_src_/database/spring-to-do.XWlkcA/schema/information_schema.FNRwLQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/973d0930-63d2-404f-82f3-2c50c0a330be/storage_v2/_src_/database/spring-to-do.XWlkcA/schema/information_schema.FNRwLQ.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/973d0930-63d2-404f-82f3-2c50c0a330be/storage_v2/_src_/database/spring-to-do.XWlkcA/schema/pg_catalog.0S1ZNQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/973d0930-63d2-404f-82f3-2c50c0a330be/storage_v2/_src_/database/spring-to-do.XWlkcA/schema/pg_catalog.0S1ZNQ.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/imangali/spring/securingweb/MvcConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/imangali/spring/securingweb/MvcConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/imangali/spring/securingweb/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/imangali/spring/securingweb/WebSecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/tasks/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/login.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/tasks/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/tasks/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/tasks/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/tasks/show.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/tasks/show.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -238,7 +237,7 @@
       <workItem from="1652968828739" duration="6397000" />
       <workItem from="1652975968283" duration="1723000" />
       <workItem from="1652977983909" duration="63000" />
-      <workItem from="1652983253913" duration="1660000" />
+      <workItem from="1652983253913" duration="4039000" />
     </task>
     <servers />
   </component>
