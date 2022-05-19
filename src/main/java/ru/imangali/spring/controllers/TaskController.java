@@ -70,7 +70,7 @@ public class TaskController {
 
         return "redirect:/tasks";
     }
-    
+
     @DeleteMapping("/{id}")
     public String delete(@PathVariable("id") int id){
         taskDAO.delete(id);

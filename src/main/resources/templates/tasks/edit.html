@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://thymeleaf.org">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
   <head>
     <meta charset="UTF-8">
-    <title>New task</title>
-    <link rel="stylesheet" th:href="@{/css/new.css}"/>
+    <title>Update task</title>
+    <link rel="stylesheet" th:href="@{/css/tasks/edit.css}"/>
   </head>
   <body>
 
-    <form th:method="POST" th:action="@{/tasks}" th:object="${task}">
 
+    <form th:method="PATCH" th:action="@{/tasks/{id}(id=${task.getId()})}" th:object="${task}">
       <p style="color: red" th:if="${#fields.hasErrors('priority')}" th:errors="*{priority}">priority error</p>
       <label for="priority">priority: </label>
       <input type="text" th:field="*{priority}" id="priority"/> <br>
@@ -25,7 +25,7 @@
       <label for="deadline">Deadline: </label>
       <input type="text" th:field="*{deadline}" id="deadline"/> <br>
 
-      <input style="margin-top: 1%" type="submit" value="Create!">
+      <input style="margin-top: 1%" type="submit" value="Update!">
     </form>
 
   </body>
