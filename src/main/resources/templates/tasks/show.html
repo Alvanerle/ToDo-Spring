@@ -14,13 +14,13 @@
     <h1>Deadline: </h1><p th:text="${#strings.substring(task.getDeadline(), 0, 10)}">Value</p>
 
 
-    <a th:href="@{/tasks/{id}/edit(id=${task.getId()})}">
-      <button class="button-15" role="button">Edit</button>
+    <a style="width: 7%" class="button-15" role="button" th:href="@{/tasks/{id}/edit(id=${task.getId()})}">
+      Edit
     </a>
 
 
     <form style="margin-top: 1%" th:method="DELETE" th:action="@{/tasks/{id}(id=${task.getId()})}">
-        <input type="submit" value="Delete"/>
+        <input class="button-15" role="button" type="submit" value="Delete"/>
     </form>
 
   </body>

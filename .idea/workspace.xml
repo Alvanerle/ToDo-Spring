@@ -11,6 +11,12 @@
   <component name="ChangeListManager">
     <list default="true" id="89deda74-356c-4b4c-9d3b-1d138d876812" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/imangali/spring/securingweb/MvcConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/imangali/spring/securingweb/MvcConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/imangali/spring/securingweb/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/imangali/spring/securingweb/WebSecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/tasks/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/login.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/tasks/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/tasks/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/tasks/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/tasks/show.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/tasks/show.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,11 +81,11 @@
       <recent name="C:\Users\Imangaly\IdeaProjects\ToDo\src\main\java" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Imangaly\IdeaProjects\ToDo\src\main\resources\static\css\" />
+      <recent name="C:\Users\Imangaly\IdeaProjects\ToDo\src\main\resources\templates" />
       <recent name="C:\Users\Imangaly\IdeaProjects\ToDo\src\main\resources\static\styles" />
       <recent name="C:\Users\Imangaly\IdeaProjects\ToDo\src\main\resources\static\tasks" />
       <recent name="C:\Users\Imangaly\IdeaProjects\ToDo\src\main\resources\static" />
-      <recent name="C:\Users\Imangaly\IdeaProjects\ToDo\src\main\resources\templates" />
-      <recent name="C:\Users\Imangaly\IdeaProjects\ToDo\target" />
     </key>
   </component>
   <component name="RunManager" selected="Spring Boot.Application">
@@ -230,7 +236,9 @@
       <workItem from="1652786244111" duration="13000" />
       <workItem from="1652878583375" duration="5202000" />
       <workItem from="1652968828739" duration="6397000" />
-      <workItem from="1652975968283" duration="1601000" />
+      <workItem from="1652975968283" duration="1723000" />
+      <workItem from="1652977983909" duration="63000" />
+      <workItem from="1652983253913" duration="1660000" />
     </task>
     <servers />
   </component>
