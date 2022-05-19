@@ -2,6 +2,8 @@ package ru.imangali.spring.models;
 
 
 import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 
 import javax.validation.constraints.*;
 import java.util.Date;
@@ -21,6 +23,14 @@ public class Task {
     @Min(value = 1, message = "Priority should be in range [1, 10]")
     @Max(value = 10, message = "Priority should be in range [1, 10]")
     private int priority;
+
+    private String username;
+
+    {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        String currentUser = authentication.getName();
+        this.username = currentUser;
+    }
 
     public Task(){
 
@@ -72,5 +82,13 @@ public class Task {
 
     public void setPriority(int priority) {
         this.priority = priority;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
     }
 }

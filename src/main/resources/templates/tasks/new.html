@@ -10,11 +10,11 @@
     <form th:method="POST" th:action="@{/tasks}" th:object="${task}">
 
       <p style="color: red" th:if="${#fields.hasErrors('priority')}" th:errors="*{priority}">priority error</p>
-      <label for="priority">priority: </label>
+      <label for="priority">Priority: </label>
       <input type="text" th:field="*{priority}" id="priority"/> <br>
 
       <p style="color: red" th:if="${#fields.hasErrors('name')}" th:errors="*{name}">name error</p>
-      <label for="name">Your name: </label>
+      <label for="name">Name: </label>
       <input type="text" th:field="*{name}" id="name"/> <br>
 
       <p style="color: red" th:if="${#fields.hasErrors('description')}" th:errors="*{description}">description error</p>

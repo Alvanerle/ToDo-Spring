@@ -4,6 +4,8 @@ package ru.imangali.spring.dao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Component;
 import ru.imangali.spring.models.Task;
 
@@ -13,7 +15,6 @@ import java.util.List;
 
 @Component
 public class TaskDAO {
-
     private final JdbcTemplate jdbcTemplate;
 
     @Autowired
@@ -23,7 +24,9 @@ public class TaskDAO {
 
 
     public List<Task> index() {
-        return jdbcTemplate.query("SELECT * FROM Task ORDER BY priority", new BeanPropertyRowMapper<>(Task.class));
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        String username = authentication.getName();
+        return jdbcTemplate.query("SELECT * FROM Task WHERE username=? ORDER BY priority", new Object[]{username}, new BeanPropertyRowMapper<>(Task.class));
     }
 
     public Task show(int id){
@@ -32,7 +35,7 @@ public class TaskDAO {
     }
 
     public void save(Task task){
-        jdbcTemplate.update("INSERT INTO Task (name, description, deadline, priority) VALUES (?, ?, ?, ?)", task.getName(), task.getDescription(), task.getDeadline(), task.getPriority());
+        jdbcTemplate.update("INSERT INTO Task (name, description, deadline, priority, username) VALUES (?, ?, ?, ?, ?)", task.getName(), task.getDescription(), task.getDeadline(), task.getPriority(), task.getUsername());
     }
 
     public void update(int id, Task updatedTask){

@@ -835,7 +835,7 @@ false Zulu
 13158||-9223372036854775808|U|G
 13158||10|U|G</Grants>
       <Owner>postgres</Owner>
-      <IntrospectionStateNumber>1689</IntrospectionStateNumber>
+      <IntrospectionStateNumber>1714</IntrospectionStateNumber>
       <Relations>sequence|table|17495|17497|1
 </Relations>
     </database>
@@ -1504,7 +1504,7 @@ false Zulu
 13425||10|w|G</Grants>
       <StateNumber>293</StateNumber>
       <Owner>postgres</Owner>
-      <IntrospectionStateNumber>1690</IntrospectionStateNumber>
+      <IntrospectionStateNumber>1715</IntrospectionStateNumber>
     </schema>
     <schema id="42" parent="6" name="pg_catalog">
       <ObjectId>11</ObjectId>
@@ -2577,14 +2577,14 @@ false Zulu
 12322||10|w|G</Grants>
       <StateNumber>286</StateNumber>
       <Owner>postgres</Owner>
-      <IntrospectionStateNumber>1691</IntrospectionStateNumber>
+      <IntrospectionStateNumber>1716</IntrospectionStateNumber>
     </schema>
     <schema id="43" parent="6" name="public">
       <ObjectId>2200</ObjectId>
       <Comment>standard public schema</Comment>
       <StateNumber>287</StateNumber>
       <Owner>postgres</Owner>
-      <IntrospectionStateNumber>1692</IntrospectionStateNumber>
+      <IntrospectionStateNumber>1717</IntrospectionStateNumber>
       <Current>1</Current>
     </schema>
     <extension id="44" parent="6" name="plpgsql">
@@ -62728,7 +62728,7 @@ false Zulu
     <table id="5167" parent="43" name="task">
       <ObjectId>17497</ObjectId>
       <Owner>postgres</Owner>
-      <StateNumber>1631</StateNumber>
+      <StateNumber>1713</StateNumber>
     </table>
     <table id="5168" parent="43" name="usr">
       <ObjectId>17511</ObjectId>
@@ -110786,7 +110786,13 @@ umserver</ColNames>
       <StateNumber>1631</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <index id="16137" parent="5167" name="task_pkey">
+    <column id="16137" parent="5167" name="username">
+      <Position>6</Position>
+      <DataType>varchar(50)|0s</DataType>
+      <StateNumber>1713</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <index id="16138" parent="5167" name="task_pkey">
       <ObjectId>17504</ObjectId>
       <StateNumber>1631</StateNumber>
       <ColNames>id</ColNames>
@@ -110796,35 +110802,47 @@ umserver</ColNames>
       <CollationIds>0</CollationIds>
       <ClassIds>1978</ClassIds>
     </index>
-    <key id="16138" parent="5167" name="task_pkey">
+    <key id="16139" parent="5167" name="task_pkey">
       <ObjectId>17505</ObjectId>
       <StateNumber>1631</StateNumber>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>task_pkey</UnderlyingIndexName>
     </key>
-    <column id="16139" parent="5168" name="username">
+    <foreign-key id="16140" parent="5167" name="task_username_fkey">
+      <ObjectId>17524</ObjectId>
+      <StateNumber>1713</StateNumber>
+      <ColNames>username</ColNames>
+      <RefTableId>17511</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>usr</RefTableName>
+      <RefKeyName>usr_pkey</RefKeyName>
+      <RefColNames>username</RefColNames>
+      <OnDelete>cascade</OnDelete>
+      <OnUpdate>cascade</OnUpdate>
+    </foreign-key>
+    <column id="16141" parent="5168" name="username">
       <Position>1</Position>
       <DataType>varchar(50)|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>1682</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="16140" parent="5168" name="password">
+    <column id="16142" parent="5168" name="password">
       <Position>2</Position>
       <DataType>varchar(50)|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>1682</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="16141" parent="5168" name="active">
+    <column id="16143" parent="5168" name="active">
       <Position>3</Position>
       <DataType>boolean|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>1682</StateNumber>
       <TypeId>16</TypeId>
     </column>
-    <index id="16142" parent="5168" name="usr_pkey">
+    <index id="16144" parent="5168" name="usr_pkey">
       <ObjectId>17514</ObjectId>
       <StateNumber>1682</StateNumber>
       <ColNames>username</ColNames>
@@ -110835,7 +110853,7 @@ umserver</ColNames>
       <CollationNames>default</CollationNames>
       <ClassIds>3126</ClassIds>
     </index>
-    <key id="16143" parent="5168" name="usr_pkey">
+    <key id="16145" parent="5168" name="usr_pkey">
       <ObjectId>17515</ObjectId>
       <StateNumber>1682</StateNumber>
       <ColNames>username</ColNames>

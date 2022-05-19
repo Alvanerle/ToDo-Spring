@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
   <head>
     <meta charset="UTF-8">
     <title>All tasks</title>
@@ -7,9 +8,17 @@
   </head>
   <body>
 
-  <form th:action="@{/logout}" method="post">
-    <input class="button-15" role="button" type="submit" value="Sign Out"/>
-  </form>
+  <div class="todo-header">
+      <div style="text-align: left; width: 20%" sec:authorize="isAuthenticated()">
+        <span sec:authentication="name"></span>
+      </div>
+
+    <div style="position: absolute; margin-top: -2%; margin-left: 85%;">
+      <form th:action="@{/logout}" method="post">
+        <input class="button-15" role="button" type="submit" value="Sign Out"/>
+      </form>
+    </div>
+  </div>
 
   <div class="todo-header">
     <h1>ToDo List</h1>
