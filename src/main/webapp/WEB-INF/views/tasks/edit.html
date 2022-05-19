@@ -8,7 +8,6 @@
   <body>
 
 
-
     <form th:method="PATCH" th:action="@{/tasks/{id}(id=${task.getId()})}" th:object="${task}">
       <p style="color: red" th:if="${#fields.hasErrors('priority')}" th:errors="*{priority}">priority error</p>
       <label for="priority">priority: </label>

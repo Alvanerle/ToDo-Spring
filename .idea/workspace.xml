@@ -9,7 +9,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="89deda74-356c-4b4c-9d3b-1d138d876812" name="Default Changelist" comment="" />
+    <list default="true" id="89deda74-356c-4b4c-9d3b-1d138d876812" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/imangali/spring/controllers/TaskController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/imangali/spring/controllers/TaskController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/css/show.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/css/show.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/tasks/edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/tasks/edit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/tasks/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/tasks/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/tasks/show.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/tasks/show.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ru/imangali/spring/config/MySpringMvcDispatcherServletInitializer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/imangali/spring/config/MySpringMvcDispatcherServletInitializer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ru/imangali/spring/config/SpringConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/imangali/spring/config/SpringConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ru/imangali/spring/controllers/TaskController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/imangali/spring/controllers/TaskController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ru/imangali/spring/dao/TaskDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/imangali/spring/dao/TaskDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ru/imangali/spring/models/Task.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/imangali/spring/models/Task.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/spring-mvc-app1/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/target/spring-mvc-app1/META-INF/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/spring-mvc-app1/WEB-INF/classes/ru/imangali/spring/config/MySpringMvcDispatcherServletInitializer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/spring-mvc-app1/WEB-INF/classes/ru/imangali/spring/config/MySpringMvcDispatcherServletInitializer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/spring-mvc-app1/WEB-INF/classes/ru/imangali/spring/config/SpringConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/spring-mvc-app1/WEB-INF/classes/ru/imangali/spring/config/SpringConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/spring-mvc-app1/WEB-INF/classes/ru/imangali/spring/controllers/TaskController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/spring-mvc-app1/WEB-INF/classes/ru/imangali/spring/controllers/TaskController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/spring-mvc-app1/WEB-INF/classes/ru/imangali/spring/dao/TaskDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/spring-mvc-app1/WEB-INF/classes/ru/imangali/spring/dao/TaskDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/spring-mvc-app1/WEB-INF/classes/ru/imangali/spring/models/Task.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/spring-mvc-app1/WEB-INF/classes/ru/imangali/spring/models/Task.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/spring-mvc-app1/WEB-INF/views/tasks/edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/spring-mvc-app1/WEB-INF/views/tasks/edit.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -18,8 +39,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="HTML File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -42,7 +63,9 @@
     <option name="CUSTOM_FILTER" />
   </component>
   <component name="ProjectId" id="293Y4Jhh0JYFXfeBMzKVAZyxkRv" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -50,37 +73,55 @@
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="postgresql" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/webapp/WEB-INF" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Imangaly\IdeaProjects\ToDo\src\main\resources\templates" />
       <recent name="C:\Users\Imangaly\IdeaProjects\ToDo\src\main\webapp\WEB-INF" />
       <recent name="C:\Users\Imangaly\IdeaProjects\ToDo\src\main\java" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Imangaly\IdeaProjects\ToDo\src\main\resources\templates" />
+      <recent name="C:\Users\Imangaly\IdeaProjects\ToDo\src\main\resources\static" />
+      <recent name="C:\Users\Imangaly\IdeaProjects\ToDo\target" />
       <recent name="C:\Users\Imangaly\IdeaProjects\ToDo\src\main\webapp\WEB-INF\css" />
       <recent name="C:\Users\Imangaly\IdeaProjects\ToDo\src\main\static" />
-      <recent name="C:\Users\Imangaly\IdeaProjects\ToDo\src\main\webapp\WEB-INF\views\tasks" />
     </key>
   </component>
-  <component name="RunManager">
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+  <component name="RunManager" selected="Tomcat Server.Tomcat 9.0.62">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SecuringWebApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="ToDo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ru.imangali.spring.securingweb.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="ru.imangali.spring.securingweb.SecuringWebApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -172,6 +213,11 @@
         </option>
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Spring Boot.SecuringWebApplication" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -183,7 +229,11 @@
       <updated>1652343045988</updated>
       <workItem from="1652343048570" duration="151000" />
       <workItem from="1652343228039" duration="12020000" />
-      <workItem from="1652358408438" duration="3225000" />
+      <workItem from="1652358408438" duration="8385000" />
+      <workItem from="1652542806464" duration="2197000" />
+      <workItem from="1652605942546" duration="51000" />
+      <workItem from="1652786244111" duration="13000" />
+      <workItem from="1652878583375" duration="5202000" />
     </task>
     <servers />
   </component>
@@ -200,5 +250,6 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>

@@ -8,10 +8,10 @@
 
   <body>
 
-    <h2>Priority: </h2><p th:text="${task.getPriority()}">Value</p>
-    <h2>Name: </h2><p th:text="${task.getName()}">Value</p>
-    <h2>Description: </h2><p th:text="${task.getDescription()}">Value</p>
-    <h2>Deadline: </h2><p th:text="${#strings.substring(task.getDeadline(), 0, 10)}">Value</p>
+    <h1>Name: </h1><p th:text="${task.getName()}">Value</p>
+    <h1>Priority: </h1><p th:text="${task.getPriority()}">Value</p>
+    <h1>Description: </h1><p th:text="${task.getDescription()}">Value</p>
+    <h1>Deadline: </h1><p th:text="${#strings.substring(task.getDeadline(), 0, 10)}">Value</p>
 
 
     <a th:href="@{/tasks/{id}/edit(id=${task.getId()})}">
@@ -19,9 +19,9 @@
     </a>
 
 
-      <form style="margin-top: 1%" th:method="DELETE" th:action="@{/tasks/{id}(id=${task.getId()})}">
-          <input type="submit" value="Delete"/>
-      </form>
+    <form style="margin-top: 1%" th:method="DELETE" th:action="@{/tasks/{id}(id=${task.getId()})}">
+        <input type="submit" value="Delete"/>
+    </form>
 
   </body>
 </html>
