@@ -7,26 +7,30 @@
   </head>
   <body>
 
-    <form th:method="POST" th:action="@{/tasks}" th:object="${task}">
+    <div style="margin: 1% 1% 1% 1%">
+      <form th:method="POST" th:action="@{/tasks}" th:object="${task}">
 
-      <p style="color: red" th:if="${#fields.hasErrors('priority')}" th:errors="*{priority}">priority error</p>
-      <label for="priority">Priority: </label>
-      <input type="text" th:field="*{priority}" id="priority"/> <br>
+        <p style="color: red" th:if="${#fields.hasErrors('priority')}" th:errors="*{priority}">priority error</p>
+        <label for="priority">Priority: </label>
+        <input type="text" th:field="*{priority}" id="priority"/> <br> <br>
 
-      <p style="color: red" th:if="${#fields.hasErrors('name')}" th:errors="*{name}">name error</p>
-      <label for="name">Name: </label>
-      <input type="text" th:field="*{name}" id="name"/> <br>
+        <p style="color: red" th:if="${#fields.hasErrors('name')}" th:errors="*{name}">name error</p>
+        <label for="name">Name: </label>
+        <input type="text" th:field="*{name}" id="name"/> <br> <br>
 
-      <p style="color: red" th:if="${#fields.hasErrors('description')}" th:errors="*{description}">description error</p>
-      <label for="description">Description: </label>
-      <input type="text" th:field="*{description}" id="description"/> <br>
+        <p style="color: red" th:if="${#fields.hasErrors('description')}" th:errors="*{description}">description error</p>
+        <label for="description">Description: </label>
+        <textarea cols="40" rows="10" type="text" th:field="*{description}" id="description"> </textarea> <br> <br>
 
-      <p style="color: red" th:if="${#fields.hasErrors('deadline')}" th:errors="*{deadline}">deadline error</p>
-      <label for="deadline">Deadline: </label>
-      <input type="text" th:field="*{deadline}" id="deadline"/> <br>
+        <p style="color: red" th:if="${#fields.hasErrors('deadline')}" th:errors="*{deadline}">deadline error</p>
+        <p style="color: fuchsia"><strong>Date only in format YYYY-MM-DD</strong></p>
+        <label for="deadline">Deadline: </label>
+        <input type="text" th:field="*{deadline}" id="deadline"/> <br> <br>
 
-      <input style="margin-top: 1%" type="submit" value="Create!">
-    </form>
+        <input class="button-15" role="button" style="margin-top: 1%" type="submit" value="Create!">
+      </form>
+
+    </div>
 
   </body>
 </html>
