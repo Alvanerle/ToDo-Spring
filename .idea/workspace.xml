@@ -11,11 +11,9 @@
   <component name="ChangeListManager">
     <list default="true" id="89deda74-356c-4b4c-9d3b-1d138d876812" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/tasks/edit.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/tasks/edit.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/tasks/new.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/tasks/new.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/imangali/spring/securingweb/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/imangali/spring/securingweb/WebSecurityConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/tasks/show.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/tasks/show.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/tasks/edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/tasks/edit.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/tasks/new.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/tasks/new.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/login.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,6 +86,17 @@
     </key>
   </component>
   <component name="RunManager" selected="Spring Boot.Application">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="ToDo" />
       <extension name="coverage">
@@ -227,7 +236,8 @@
       <workItem from="1652975968283" duration="1723000" />
       <workItem from="1652977983909" duration="63000" />
       <workItem from="1652983253913" duration="9398000" />
-      <workItem from="1653046409334" duration="1506000" />
+      <workItem from="1653046409334" duration="2514000" />
+      <workItem from="1653070053966" duration="3188000" />
     </task>
     <servers />
   </component>
