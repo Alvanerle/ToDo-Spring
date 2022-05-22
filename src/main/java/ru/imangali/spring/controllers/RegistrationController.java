@@ -4,7 +4,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import ru.imangali.spring.dao.UserDAO;
 import ru.imangali.spring.models.User;
@@ -26,13 +25,23 @@ public class RegistrationController {
 
     @PostMapping("/registration")
     public String addUser(User user, Model model){
+        user.setUsername(user.getUsername().trim());
         if(userDAO.find(user.getUsername()) != null){
             model.addAttribute("message", "user already exists");
             return "registration";
         }
+        if(containsSpace(user.getUsername())){
+            model.addAttribute("message", "username cannot contain spaces");
+            return "registration";
+        }
+
         user.setActive(true);
         userDAO.save(user);
 
         return "redirect:/login";
+    }
+
+    public boolean containsSpace(String username){
+        return username.contains(" ");
     }
 }
