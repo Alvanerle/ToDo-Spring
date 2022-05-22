@@ -28,7 +28,7 @@ public class Task {
     private int user_id;
 
     public Task(){
-
+        priority = 1;
     }
 
     public Task(int id, String name, String description, Date deadline, int priority) {
