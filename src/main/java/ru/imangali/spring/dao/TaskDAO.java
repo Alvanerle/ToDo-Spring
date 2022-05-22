@@ -30,7 +30,9 @@ public class TaskDAO {
     }
 
     public Task show(int id){
-        return jdbcTemplate.query("SELECT * FROM Task WHERE id=?", new Object[]{id}, new BeanPropertyRowMapper<>(Task.class))
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        String username = authentication.getName();
+        return jdbcTemplate.query("SELECT * FROM Task WHERE id=?, username=?", new Object[]{id, username}, new BeanPropertyRowMapper<>(Task.class))
                 .stream().findAny().orElse(null);
     }
 
