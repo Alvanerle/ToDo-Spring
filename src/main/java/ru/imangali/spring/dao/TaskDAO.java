@@ -26,7 +26,7 @@ public class TaskDAO {
     public List<Task> index() {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         String username = authentication.getName();
-        return jdbcTemplate.query("SELECT * FROM Task WHERE username=? ORDER BY priority, deadline desc", new Object[]{username}, new BeanPropertyRowMapper<>(Task.class));
+        return jdbcTemplate.query("SELECT * FROM Task WHERE username=? ORDER BY priority, deadline", new Object[]{username}, new BeanPropertyRowMapper<>(Task.class));
     }
 
     public Task show(int id){
