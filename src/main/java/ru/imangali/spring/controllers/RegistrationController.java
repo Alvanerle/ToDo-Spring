@@ -35,6 +35,10 @@ public class RegistrationController {
             model.addAttribute("message", "username cannot contain spaces");
             return "registration";
         }
+        if(user.getPassword().length() > 50 || user.getPassword().length() < 6){
+            model.addAttribute("message", "password length should be in range [6, 50]");
+            return "registration";
+        }
         String encoded = new BCryptPasswordEncoder().encode(user.getPassword());
 
         user.setActive(true);
