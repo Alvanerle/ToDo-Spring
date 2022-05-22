@@ -25,13 +25,7 @@ public class Task {
     @Max(value = 10, message = "Priority should be in range [1, 10]")
     private int priority;
 
-    private String username;
-
-    {
-        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        String currentUser = authentication.getName();
-        this.username = currentUser;
-    }
+    private int user_id;
 
     public Task(){
 
@@ -85,11 +79,11 @@ public class Task {
         this.priority = priority;
     }
 
-    public String getUsername() {
-        return username;
+    public int getUser_id() {
+        return user_id;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setUser_id(int user_id) {
+        this.user_id = user_id;
     }
 }

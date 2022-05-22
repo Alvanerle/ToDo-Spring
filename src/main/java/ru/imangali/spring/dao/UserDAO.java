@@ -23,6 +23,7 @@ public class UserDAO {
 
     public void save(User user){
         jdbcTemplate.update("INSERT INTO Usr (username, password, active) VALUES (?, ?, ?)", user.getUsername(), user.getPassword(), user.isActive());
-        jdbcTemplate.update("INSERT INTO Role (username, role) VALUES (?, ?)", user.getUsername(), "USER");
+        User curUser = find(user.getUsername());
+        jdbcTemplate.update("INSERT INTO Role (user_id, role) VALUES (?, ?)", curUser.getUser_id(), "USER");
     }
 }

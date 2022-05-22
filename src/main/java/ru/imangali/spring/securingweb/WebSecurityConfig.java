@@ -7,7 +7,7 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.crypto.password.NoOpPasswordEncoder;
+
 
 import javax.sql.DataSource;
 
@@ -37,7 +37,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         auth.jdbcAuthentication()
                 .dataSource(dataSource)
                 .passwordEncoder(new BCryptPasswordEncoder())
-                .usersByUsernameQuery("SELECT username, password, active from usr where username=?")
-                .authoritiesByUsernameQuery("select username, role from role where username=?");
+                .usersByUsernameQuery("SELECT username, password, active FROM usr WHERE username=?")
+                .authoritiesByUsernameQuery("SELECT username, role FROM usr INNER JOIN role ON usr.user_id=role.user_id WHERE usr.username=?");
     }
 }
