@@ -1,6 +1,7 @@
 package ru.imangali.spring.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -34,8 +35,10 @@ public class RegistrationController {
             model.addAttribute("message", "username cannot contain spaces");
             return "registration";
         }
+        String encoded = new BCryptPasswordEncoder().encode(user.getPassword());
 
         user.setActive(true);
+        user.setPassword(encoded);
         userDAO.save(user);
 
         return "redirect:/login";
