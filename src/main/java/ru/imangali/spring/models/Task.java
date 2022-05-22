@@ -18,6 +18,7 @@ public class Task {
     private String description;
 
     @DateTimeFormat(pattern = "yyyy-MM-dd")
+    @NotNull(message = "Deadline should not be empty")
     private Date deadline;
 
     @Min(value = 1, message = "Priority should be in range [1, 10]")
