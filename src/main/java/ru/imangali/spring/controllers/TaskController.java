@@ -29,13 +29,7 @@ public class TaskController {
 
         return "tasks/index";
     }
-
-    @GetMapping("/{id}")
-    public String show(@PathVariable("id") int id, Model model){
-        model.addAttribute("task", taskDAO.show(id));
-
-        return "tasks/show";
-    }
+    
 
     @GetMapping("/new")
     public String newTask(@ModelAttribute("task") Task task){
