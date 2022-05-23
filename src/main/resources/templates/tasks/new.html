@@ -7,30 +7,29 @@
   </head>
   <body>
 
-    <div style="margin: 1% 1% 1% 1%">
+    <div class="form__group">
       <form th:method="POST" th:action="@{/tasks}" th:object="${task}">
 
         <p style="color: red" th:if="${#fields.hasErrors('priority')}" th:errors="*{priority}">priority error</p>
-        <label for="priority">Priority: </label>
-        <input type="text" th:field="*{priority}" id="priority"/> <br> <br>
+        <label for="priority" class="form__label">Priority: </label>
+        <input type="range" min="1" max="10" th:field="*{priority}" id="priority"/> <br> <br>
 
-        <p style="color: red" th:if="${#fields.hasErrors('name')}" th:errors="*{name}">name error</p>
-        <label for="name">Name: </label>
-        <input type="text" th:field="*{name}" id="name"/> <br> <br>
+        <p style="color: red; font-size: 1.5rem" th:if="${#fields.hasErrors('name')}" th:errors="*{name}">name error</p>
+<!--        <label for="name">Name: </label>-->
+        <input class="form__input" type="text" placeholder="Name" th:field="*{name}" id="name"/> <br> <br>
 
-        <p style="color: red" th:if="${#fields.hasErrors('description')}" th:errors="*{description}">description error</p>
-        <label for="description">Description: </label>
-        <textarea cols="40" rows="10" type="text" th:field="*{description}" id="description"> </textarea> <br> <br>
+        <p style="color: red; font-size: 1.5rem" th:if="${#fields.hasErrors('description')}" th:errors="*{description}">description error</p>
+<!--        <label for="description">Description: </label>-->
+        <textarea class="form__input" cols="40" rows="10" type="text" placeholder="Description" th:field="*{description}" id="description"> </textarea> <br> <br>
 
         <p style="color: red" th:if="${#fields.hasErrors('deadline')}" th:errors="*{deadline}">deadline error</p>
-        <p style="color: fuchsia"><strong>Date only in format YYYY-MM-DD</strong></p>
-        <label for="deadline">Deadline: </label>
-        <input type="text" th:field="*{deadline}" id="deadline"/> <br> <br>
+        <label class="form__label" for="deadline">Deadline: </label>
+        <input style="font-size: 1.5rem" type="date" th:field="*{deadline}" id="deadline"/> <br> <br>
 
         <input class="button-15" role="button" style="margin-top: 1%" type="submit" value="Create!">
       </form>
-
     </div>
+
 
   </body>
 </html>
