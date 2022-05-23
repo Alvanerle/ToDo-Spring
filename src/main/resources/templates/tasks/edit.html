@@ -27,6 +27,11 @@
 
         <input class="button-15" role="button" style="margin-top: 1%" type="submit" value="Update!">
       </form>
+      
+      <br>
+      <form style="margin-top: 1%" th:method="DELETE" th:action="@{/tasks/{id}(id=${task.getId()})}">
+        <input class="button-15" role="button" type="submit" value="Delete"/>
+      </form>
     </div>
   </body>
 </html>

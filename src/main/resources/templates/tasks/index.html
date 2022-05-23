@@ -31,7 +31,7 @@
           <div class="card-body">
             <div class="todo-list" th:each="task : ${tasks}">
               <div class="todo-item">
-                <a th:href="@{/tasks/{id}(id=${task.getId()})}" th:text="${task.getName()}">user</a>
+                <a th:href="@{/tasks/{id}/edit(id=${task.getId()})}" th:text="${task.getName()}">user</a>
               </div>
             </div>
             <a href="/tasks/new">
