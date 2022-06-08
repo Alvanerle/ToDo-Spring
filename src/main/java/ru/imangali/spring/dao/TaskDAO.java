@@ -37,7 +37,7 @@ public class TaskDAO {
 
     public List<Task> index() {
         User user = getCurrentUser();
-        return jdbcTemplate.query("SELECT * FROM Task WHERE user_id=? ORDER BY priority DESC, deadline", new Object[]{user.getUser_id()}, new BeanPropertyRowMapper<>(Task.class));
+        return jdbcTemplate.query("SELECT * FROM Task WHERE user_id=? ORDER BY deadline, priority DESC", new Object[]{user.getUser_id()}, new BeanPropertyRowMapper<>(Task.class));
     }
 
     public Task show(int id){
