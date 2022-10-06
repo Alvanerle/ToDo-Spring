@@ -2,8 +2,6 @@ package ru.imangali.spring.models;
 
 
 import org.springframework.format.annotation.DateTimeFormat;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContextHolder;
 
 import javax.validation.constraints.*;
 import java.util.Date;
@@ -14,12 +12,12 @@ public class Task {
     @NotEmpty(message = "Name should not be empty")
     private String name;
 
-    @NotEmpty(message = "Description should not be empty")
     private String description;
 
-    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    @DateTimeFormat(pattern = "yyyy-MM-dd'T'HH:mm")
     @NotNull(message = "Deadline should not be empty")
     private Date deadline;
+
 
     @Min(value = 1, message = "Priority should be in range [1, 10]")
     @Max(value = 10, message = "Priority should be in range [1, 10]")

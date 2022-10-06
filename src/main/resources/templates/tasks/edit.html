@@ -23,7 +23,7 @@
 
         <p style="color: red" th:if="${#fields.hasErrors('deadline')}" th:errors="*{deadline}">deadline error</p>
         <label class="form__label" for="deadline">Deadline: </label>
-        <input class="form__input" style="font-size: 1.5rem" type="date" th:field="*{deadline}" id="deadline"/> <br> <br>
+        <input class="form__input" style="font-size: 1.5rem" type="datetime-local" th:field="*{deadline}" id="deadline"/> <br> <br>
 
         <input class="button-15" role="button" style="margin-top: 1%" type="submit" value="Update!">
       </form>
