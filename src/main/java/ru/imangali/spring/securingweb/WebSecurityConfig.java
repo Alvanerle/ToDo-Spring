@@ -7,6 +7,7 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import ru.imangali.spring.service.UserService;
 
 
 import javax.sql.DataSource;
@@ -15,7 +16,7 @@ import javax.sql.DataSource;
 @EnableWebSecurity
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
-    private DataSource dataSource;
+    private UserService userService;
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
@@ -34,10 +35,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth.jdbcAuthentication()
-                .dataSource(dataSource)
-                .passwordEncoder(new BCryptPasswordEncoder())
-                .usersByUsernameQuery("SELECT username, password, active FROM usr WHERE username=?")
-                .authoritiesByUsernameQuery("SELECT username, role FROM usr INNER JOIN role ON usr.user_id=role.user_id WHERE usr.username=?");
+        auth.userDetailsService(userService)
+                .passwordEncoder(new BCryptPasswordEncoder());
     }
 }

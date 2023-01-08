@@ -6,18 +6,16 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import ru.imangali.spring.dao.UserDAO;
-import ru.imangali.spring.models.User;
+import ru.imangali.spring.domain.Role;
+import ru.imangali.spring.domain.User;
+import ru.imangali.spring.repo.UserRepo;
+
+import java.util.Collections;
 
 @Controller
 public class RegistrationController {
-    private final UserDAO userDAO;
-
     @Autowired
-    public RegistrationController(UserDAO userDAO){
-        this.userDAO = userDAO;
-    }
-
+    private UserRepo userRepo;
 
     @GetMapping("/registration")
     public String showRegistrationPage(){
@@ -27,23 +25,26 @@ public class RegistrationController {
     @PostMapping("/registration")
     public String addUser(User user, Model model){
         user.setUsername(user.getUsername().trim());
-        if(userDAO.find(user.getUsername()) != null){
+        if(userRepo.findByUsername(user.getUsername()) != null){
             model.addAttribute("message", "user already exists");
             return "registration";
         }
+
         if(containsSpace(user.getUsername())){
             model.addAttribute("message", "username cannot contain spaces");
             return "registration";
         }
+
         if(user.getPassword().length() > 50 || user.getPassword().length() < 6){
             model.addAttribute("message", "password length should be in range [6, 50]");
             return "registration";
         }
-        String encoded = new BCryptPasswordEncoder().encode(user.getPassword());
 
+        String encoded = new BCryptPasswordEncoder().encode(user.getPassword());
         user.setActive(true);
+        user.setRoles(Collections.singleton(Role.USER));
         user.setPassword(encoded);
-        userDAO.save(user);
+        userRepo.save(user);
 
         return "redirect:/login";
     }

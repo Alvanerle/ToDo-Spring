@@ -1,13 +1,20 @@
-package ru.imangali.spring.models;
-
+package ru.imangali.spring.domain;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
-import javax.validation.constraints.*;
+import javax.persistence.*;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 import java.util.Date;
 
+@Entity
+@Table(name = "task")
 public class Task {
-    private int id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
 
     @NotEmpty(message = "Name should not be empty")
     private String name;
@@ -23,25 +30,28 @@ public class Task {
     @Max(value = 10, message = "Priority should be in range [1, 10]")
     private int priority;
 
-    private int user_id;
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "user_id")
+    private User author;
 
     public Task(){
         priority = 1;
     }
 
-    public Task(int id, String name, String description, Date deadline, int priority) {
+    public Task(Long id, String name, String description, Date deadline, int priority, User user) {
         this.id = id;
         this.name = name;
         this.description = description;
         this.deadline = deadline;
         this.priority = priority;
+        this.author = user;
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -77,11 +87,11 @@ public class Task {
         this.priority = priority;
     }
 
-    public int getUser_id() {
-        return user_id;
+    public User getAuthor() {
+        return author;
     }
 
-    public void setUser_id(int user_id) {
-        this.user_id = user_id;
+    public void setAuthor(User author) {
+        this.author = author;
     }
 }
