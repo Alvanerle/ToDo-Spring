@@ -22,21 +22,29 @@ public class RegistrationController {
         return "registration";
     }
 
-    @PostMapping("/registration")
-    public String addUser(User user, Model model){
-        user.setUsername(user.getUsername().trim());
+    boolean validate(User user, Model model) {
         if(userRepo.findByUsername(user.getUsername()) != null){
             model.addAttribute("message", "user already exists");
-            return "registration";
+            return false;
         }
 
         if(containsSpace(user.getUsername())){
             model.addAttribute("message", "username cannot contain spaces");
-            return "registration";
+            return false;
         }
 
         if(user.getPassword().length() > 50 || user.getPassword().length() < 6){
             model.addAttribute("message", "password length should be in range [6, 50]");
+            return false;
+        }
+
+        return true;
+    }
+
+    @PostMapping("/registration")
+    public String addUser(User user, Model model) {
+        user.setUsername(user.getUsername().trim());
+        if(!validate(user, model)){
             return "registration";
         }
 
