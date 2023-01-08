@@ -30,9 +30,19 @@
         <div class="card card-white">
           <div class="card-body">
             <div class="todo-list" th:each="task : ${tasks}">
-              <div class="todo-item">
-                <a th:href="@{/tasks/{id}/edit(id=${task.getId()})}" th:text="${task.getName()}">user</a>
-              </div>
+                <div class="todo-item">
+                  <a th:href="@{/tasks/{id}/edit(id=${task.getId()})}">
+                    <h3 th:text="${task.getName()}"></h3>
+                  </a>
+
+                  <label for="priority" class="form__label">Priority: </label>
+                  <input style="width: 70%" type="range" min="1" max="10" step="1" th:value="${task.getPriority()}" id="priority" disabled/> <br> <br>
+
+                  <textarea class="form__input" cols="60" rows="10" th:text="${task.getDescription()}" id="description" readonly> </textarea> <br> <br>
+
+                  <label class="form__label" for="deadline">Deadline: </label>
+                  <input class="form__input" style="font-size: 1.5rem" type="datetime-local" th:value="${task.getDeadline()}" id="deadline" readonly/>
+                </div>
             </div>
             <a href="/tasks/new">
               <button class="button-15" role="button">Create new task</button>
