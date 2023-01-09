@@ -108,3 +108,9 @@ body {
     -webkit-transform: translateY(-4rem);
     transform: translateY(-4rem);
 }
+
+select {
+    width: 200px;
+    height: 40px;
+    font-size: 20px;
+}

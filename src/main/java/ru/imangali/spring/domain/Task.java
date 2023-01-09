@@ -34,6 +34,9 @@ public class Task {
     @JoinColumn(name = "user_id")
     private User author;
 
+    // Assigned, To Do, Finished
+    private String type = "Assigned";
+
     public Task(){
         priority = 1;
     }
@@ -93,5 +96,13 @@ public class Task {
 
     public void setAuthor(User author) {
         this.author = author;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 }

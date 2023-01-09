@@ -7,6 +7,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class MainController {
     @GetMapping()
     public String redirectToMainPage(){
-        return "redirect:/tasks";
+        return "redirect:/tasks/assigned";
     }
 }

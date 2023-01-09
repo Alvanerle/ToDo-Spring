@@ -25,7 +25,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                     .antMatchers("/registration", "/css/**").permitAll()
                     .anyRequest().authenticated()
                 .and()
-                    .formLogin().defaultSuccessUrl("/tasks", true)
+                    .formLogin().defaultSuccessUrl("/tasks/assigned", true)
                     .loginPage("/login")
                     .permitAll()
                 .and()

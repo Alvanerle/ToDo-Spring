@@ -18,12 +18,19 @@
         <input class="form__input" type="text" placeholder="Name" th:field="*{name}" id="name"/> <br> <br>
 
         <p style="color: red; font-size: 1.5rem" th:if="${#fields.hasErrors('description')}" th:errors="*{description}">description error</p>
-        <!--        <label for="description">Description: </label>-->
+<!--                <label for="description">Description: </label>-->
         <textarea class="form__input" cols="60" rows="10" type="text" placeholder="Description" th:field="*{description}" id="description"> </textarea> <br> <br>
 
         <p style="color: red" th:if="${#fields.hasErrors('deadline')}" th:errors="*{deadline}">deadline error</p>
         <label class="form__label" for="deadline">Deadline: </label>
         <input class="form__input" style="font-size: 1.5rem" type="datetime-local" th:field="*{deadline}" id="deadline"/> <br> <br>
+
+        <label class="form__label">Task's state: </label>
+        <select name="type" th:field="*{type}">
+          <option value="Assigned">Assigned</option>
+          <option value="To Do">To Do</option>
+          <option value="Finished">Finished</option>
+        </select>
 
         <input class="button-15" role="button" style="margin-top: 1%" type="submit" value="Update!">
       </form>

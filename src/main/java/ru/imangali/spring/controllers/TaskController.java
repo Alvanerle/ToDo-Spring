@@ -20,13 +20,27 @@ public class TaskController {
     @Autowired
     private TaskRepo taskRepo;
 
-    @GetMapping()
-    public String index(@AuthenticationPrincipal User user, Model model){
-        model.addAttribute("tasks", taskRepo.index(user.getId()));
+    @GetMapping("/assigned")
+    public String assigned_tasks(@AuthenticationPrincipal User user, Model model){
+        model.addAttribute("tasks", taskRepo.assigned_tasks(user.getId()));
 
-        return "tasks/index";
+        return "tasks/assigned";
     }
-    
+
+    @GetMapping("/in_process")
+    public String in_process_tasks(@AuthenticationPrincipal User user, Model model){
+        model.addAttribute("tasks", taskRepo.to_do_tasks(user.getId()));
+
+        return "tasks/to-do";
+    }
+
+    @GetMapping("/finished")
+    public String finished_tasks(@AuthenticationPrincipal User user, Model model){
+        model.addAttribute("tasks", taskRepo.finished_tasks(user.getId()));
+
+        return "tasks/finished";
+    }
+
 
     @GetMapping("/new")
     public String newTask(@ModelAttribute("task") Task task){
@@ -43,7 +57,7 @@ public class TaskController {
         task.setAuthor(user);
         taskRepo.save(task);
 
-        return "redirect:/tasks";
+        return "redirect:/tasks/assigned";
     }
 
     @GetMapping("/{id}/edit")
@@ -59,15 +73,15 @@ public class TaskController {
         if(bindingResult.hasErrors())
             return "tasks/edit";
 
-        taskRepo.update(task.getName(), task.getDescription(), task.getDeadline(), task.getPriority(), id);
+        taskRepo.update(task.getName(), task.getDescription(), task.getDeadline(), task.getPriority(), task.getType(), id);
 
-        return "redirect:/tasks";
+        return "redirect:/tasks/assigned";
     }
 
     @DeleteMapping("/{id}")
     public String delete(@PathVariable("id") Long id){
         taskRepo.deleteById(id);
 
-        return "redirect:/tasks";
+        return "redirect:/tasks/assigned";
     }
 }
