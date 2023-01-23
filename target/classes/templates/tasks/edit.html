@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8">
+    <title>Update task</title>
+    <link rel="stylesheet" th:href="@{/css/tasks/edit.css}"/>
+  </head>
+  <body>
+
+    <div class="form__group">
+      <form th:method="PATCH" th:action="@{/tasks/{id}(id=${task.getId()})}" th:object="${task}">
+        <p style="color: red" th:if="${#fields.hasErrors('priority')}" th:errors="*{priority}">priority error</p>
+        <label for="priority" class="form__label">Priority: </label>
+        <input style="width: 70%" type="range" min="1" max="10" step="1" th:field="*{priority}" id="priority"/> <br> <br>
+
+        <p style="color: red; font-size: 1.5rem" th:if="${#fields.hasErrors('name')}" th:errors="*{name}">name error</p>
+        <!--        <label for="name">Name: </label>-->
+        <input class="form__input" type="text" placeholder="Name" th:field="*{name}" id="name"/> <br> <br>
+
+        <p style="color: red; font-size: 1.5rem" th:if="${#fields.hasErrors('description')}" th:errors="*{description}">description error</p>
+<!--                <label for="description">Description: </label>-->
+        <textarea class="form__input" cols="60" rows="10" type="text" placeholder="Description" th:field="*{description}" id="description"> </textarea> <br> <br>
+
+        <p style="color: red" th:if="${#fields.hasErrors('deadline')}" th:errors="*{deadline}">deadline error</p>
+        <label class="form__label" for="deadline">Deadline: </label>
+        <input class="form__input" style="font-size: 1.5rem" type="datetime-local" th:field="*{deadline}" id="deadline"/> <br> <br>
+
+        <label class="form__label">Task's state: </label>
+        <select name="type" th:field="*{type}">
+          <option value="Assigned">Assigned</option>
+          <option value="To Do">To Do</option>
+          <option value="Finished">Finished</option>
+        </select>
+
+        <input class="button-15" role="button" style="margin-top: 1%" type="submit" value="Update!">
+      </form>
+
+      <br>
+      <form style="margin-top: 0.7%" th:method="DELETE" th:action="@{/tasks/{id}(id=${task.getId()})}">
+        <input class="button-15" role="button" type="submit" value="Delete"/>
+      </form>
+    </div>
+  </body>
+</html>

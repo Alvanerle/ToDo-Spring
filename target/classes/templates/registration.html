@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+  <head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" th:href="@{/css/login.css}"/>
+  </head>
+  <body>
+
+
+
+    <div class="login-box">
+      <h2>Registration</h2>
+      <p style="color: red" th:if="${message} != null" th:text="${message}">alert about existing user</p>
+      <form th:action="@{/registration}" method="post">
+        <div class="user-box">
+          <input type="text" name="username" required="">
+          <label>Username</label>
+        </div>
+        <div class="user-box">
+          <input type="password" name="password" required="">
+          <label>Password</label>
+        </div>
+
+        <input class="button-15" role="button" type="submit" value="Sign Up"/>
+      </form>
+    </div>
+
+  </body>
+</html>

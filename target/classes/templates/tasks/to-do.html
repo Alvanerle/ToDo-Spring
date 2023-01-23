@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+  <meta charset="UTF-8">
+  <title>All tasks</title>
+  <link rel="stylesheet" th:href="@{/css/tasks/index.css}"/>
+</head>
+<body>
+
+<div class="todo-header">
+  <div style="text-align: left; width: 20%" sec:authorize="isAuthenticated()">
+    <span sec:authentication="name"></span>
+  </div>
+
+  <div style="position: absolute; margin-top: -2%; margin-left: 85%;">
+    <form th:action="@{/logout}" method="post">
+      <input class="button-15" role="button" type="submit" value="Sign Out"/>
+    </form>
+  </div>
+</div>
+
+<div class="todo-header">
+  <h1>ToDo List</h1>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card card-white">
+        <div class="card-body">
+
+          <div class="task-types">
+            <div class="task-type">
+              <a href="/tasks/assigned">
+                <button class="button-15" role="button">Assigned tasks</button>
+              </a>
+            </div>
+
+            <div class="task-type">
+              <a href="/tasks/in_process">
+                <button class="button-15" role="button">To Do tasks</button>
+              </a>
+            </div>
+
+            <div class="task-type">
+              <a href="/tasks/finished">
+                <button class="button-15" role="button">Finished tasks</button>
+              </a>
+            </div>
+          </div>
+
+          <div class="todo-list" th:each="task : ${tasks}">
+            <div class="todo-item" style="background-color: rgba(255, 252, 0, 0.64);">
+              <a th:href="@{/tasks/{id}/edit(id=${task.getId()})}">
+                <h3 th:text="${task.getName()}"></h3>
+              </a>
+
+              <label for="priority" class="form__label">Priority: </label>
+              <input style="width: 70%" type="range" min="1" max="10" step="1" th:value="${task.getPriority()}" id="priority" disabled/> <br> <br>
+
+              <textarea class="form__input" cols="60" rows="10" th:text="${task.getDescription()}" id="description" readonly> </textarea> <br> <br>
+
+              <label class="form__label" for="deadline">Deadline: </label>
+              <input class="form__input" style="font-size: 1.5rem" type="datetime-local" th:value="${task.getDeadline()}" id="deadline" readonly/>
+            </div>
+          </div>
+          <a href="/tasks/new">
+            <button class="button-15" role="button">Create new task</button>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+</body>
+</html>
