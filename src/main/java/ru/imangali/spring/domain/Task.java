@@ -34,7 +34,7 @@ public class Task {
     @JoinColumn(name = "user_id")
     private User author;
 
-    // Assigned, To Do, Finished
+    // Assigned, In process, Finished
     private String type = "Assigned";
 
     public Task(){
